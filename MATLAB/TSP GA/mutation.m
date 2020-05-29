@@ -1,17 +1,17 @@
 function NewPopulation=mutation(OldPopulation,Pm)
 [SizeOfPopulation,SizeOfChrom]=size(OldPopulation);
-% Хромосомы, выбранные для мутации
+% вЂ™СЂРѕРјРѕСЃРѕРјС‹, РІС‹Р±СЂР°РЅРЅС‹Рµ РґР»В¤ РјСѓС‚Р°С†РёРё
 SelChromMut = rand(SizeOfPopulation,1)<=Pm;
 NewPopulation=OldPopulation;
 for i=1:SizeOfPopulation
     if ~(SelChromMut(i)==0)
-        % Выбор случайного гена хромосомы
+        % В¬С‹Р±РѕСЂ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ РіРµРЅР° С…СЂРѕРјРѕСЃРѕРјС‹
         ChooseGen=randi(SizeOfChrom);
-        % Получение случайного числа для мутации
-        % Здесь необходимо учитывать, что i-й элемент списка – это
-        % номер от 1 до n-i+1
+        % С•РѕР»СѓС‡РµРЅРёРµ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ С‡РёСЃР»Р° РґР»В¤ РјСѓС‚Р°С†РёРё
+        % В«РґРµСЃСЊ РЅРµРѕР±С…РѕРґРёРјРѕ СѓС‡РёС‚С‹РІР°С‚СЊ, С‡С‚Рѕ i-Р№ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР° Р¦ СЌС‚Рѕ
+        % РЅРѕРјРµСЂ РѕС‚ 1 РґРѕ n-i+1
         RandValue=randi(SizeOfChrom-ChooseGen+1);
-        % Меняем исходную популяцию
+        % С›РµРЅВ¤РµРј РёСЃС…РѕРґРЅСѓСЋ РїРѕРїСѓР»В¤С†РёСЋ
         NewPopulation(i,ChooseGen)=RandValue;
     end
 end

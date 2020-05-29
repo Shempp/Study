@@ -6,7 +6,7 @@ for i=2:TourLength
     Distance=Distance+DistanceMatrix(Tour(i),Tour(i-1));
 end
 
-% Также добавляем последний путь до исходной точки (точка отсчета - 1)
+% РўР°РєР¶Рµ РґРѕР±Р°РІР»СЏРµРј РїРѕСЃР»РµРґРЅРёР№ РїСѓС‚СЊ РґРѕ РёСЃС…РѕРґРЅРѕР№ С‚РѕС‡РєРё (С‚РѕС‡РєР° РѕС‚СЃС‡РµС‚Р° - 1)
 Distance=Distance+DistanceMatrix(Tour(TourLength),Tour(1));
 
 end

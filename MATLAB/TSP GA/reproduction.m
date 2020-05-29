@@ -1,23 +1,23 @@
 function NewPopulation=reproduction(FuncValues,OldPopulation)
-% Нормализуем данные (для максимума)
+% РќРѕСЂРјР°Р»РёР·СѓРµРј РґР°РЅРЅС‹Рµ (РґР»СЏ РјР°РєСЃРёРјСѓРјР°)
 NormData=(FuncValues - min(FuncValues)) / (max(FuncValues) - min(FuncValues));
-% Получаем NaN в случае, если вся популяция одинакова. Выходим
+% РџРѕР»СѓС‡Р°РµРј NaN РІ СЃР»СѓС‡Р°Рµ, РµСЃР»Рё РІСЃСЏ РїРѕРїСѓР»СЏС†РёСЏ РѕРґРёРЅР°РєРѕРІР°. Р’С‹С…РѕРґРёРј
 if isnan(NormData)
     NewPopulation=OldPopulation;
     return
 end
-% Нормализуем данные (преобразовываем для минимума)
+% РќРѕСЂРјР°Р»РёР·СѓРµРј РґР°РЅРЅС‹Рµ (РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј РґР»СЏ РјРёРЅРёРјСѓРјР°)
 NormData=1-NormData;
-% Суммируем
+% РЎСѓРјРјРёСЂСѓРµРј
 SumOfNormData=sum(NormData);
-% Считаем вероятности для RWS
+% РЎС‡РёС‚Р°РµРј РІРµСЂРѕСЏС‚РЅРѕСЃС‚Рё РґР»СЏ RWS
 SelProbsMin=NormData/SumOfNormData;
-% Получаем индексы от RWS
+% РџРѕР»СѓС‡Р°РµРј РёРЅРґРµРєСЃС‹ РѕС‚ RWS
 Indexes = inf(length(SelProbsMin),1);
 for i=1:length(SelProbsMin)
     Indexes(i)=RWS(SelProbsMin);
 end
-% На основе индексов заполняем исходную популяцию после рулетки
+% РќР° РѕСЃРЅРѕРІРµ РёРЅРґРµРєСЃРѕРІ Р·Р°РїРѕР»РЅСЏРµРј РёСЃС…РѕРґРЅСѓСЋ РїРѕРїСѓР»СЏС†РёСЋ РїРѕСЃР»Рµ СЂСѓР»РµС‚РєРё
 [Rows,Columns]=size(OldPopulation);
 NewPopulation=zeros(Rows,Columns);
 for i=1:Rows

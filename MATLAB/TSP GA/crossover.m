@@ -3,27 +3,27 @@ if nargin==1
     Pc=0.5;
 end
 
-% Размер популяции
+% вЂ“Р°Р·РјРµСЂ РїРѕРїСѓР»В¤С†РёРё
 SizeOfPop=size(OldPopulation,1); 
-% Количество пар для кроссовера
+% В РѕР»РёС‡РµСЃС‚РІРѕ РїР°СЂ РґР»В¤ РєСЂРѕСЃСЃРѕРІРµСЂР°
 NumOfPares=floor(SizeOfPop/2);   
-% Пары хромосом, выбранные случайно для скрещивания
+% С•Р°СЂС‹ С…СЂРѕРјРѕСЃРѕРј, РІС‹Р±СЂР°РЅРЅС‹Рµ СЃР»СѓС‡Р°Р№РЅРѕ РґР»В¤ СЃРєСЂРµС‰РёРІР°РЅРёВ¤
 SelPairsCros=rand(NumOfPares,1)<=Pc;  
 NewPopulation=OldPopulation;
 
 for i=1:NumOfPares
     Index=(i-1)*2+1;
     if ~(SelPairsCros(i)==0)
-       % Первая хромосома из пары
+       % С•РµСЂРІР°В¤ С…СЂРѕРјРѕСЃРѕРјР° РёР· РїР°СЂС‹
        FirstChrom=OldPopulation(Index,:);
-       % Вторая хромосома из пары
+       % В¬С‚РѕСЂР°В¤ С…СЂРѕРјРѕСЃРѕРјР° РёР· РїР°СЂС‹
        SecondChrom=OldPopulation(Index+1,:);
-       % Генерация точки скрещивания
+       % в€љРµРЅРµСЂР°С†РёВ¤ С‚РѕС‡РєРё СЃРєСЂРµС‰РёРІР°РЅРёВ¤
 	   CrossPoint=randi(length(FirstChrom));
-       % Классический кроссовер
+       % В Р»Р°СЃСЃРёС‡РµСЃРєРёР№ РєСЂРѕСЃСЃРѕРІРµСЂ
        FirstChild=[FirstChrom(1:CrossPoint) SecondChrom(CrossPoint+1:end)];
        SecondChild=[SecondChrom(1:CrossPoint) FirstChrom(CrossPoint+1:end)];
-       % Меняем исходную популяцию
+       % С›РµРЅВ¤РµРј РёСЃС…РѕРґРЅСѓСЋ РїРѕРїСѓР»В¤С†РёСЋ
        NewPopulation(Index,:)=FirstChild;
        NewPopulation(Index+1,:)=SecondChild;
     end
