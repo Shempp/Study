@@ -13,3 +13,6 @@ class RentingItem(models.Model):
     address = models.CharField(max_length=256)
     pub_date = models.DateTimeField(default=timezone.now)
     #property_type = models.CharField(max_length=16, choices=PROPERTY_TYPES)
+
+    def __str__(self):
+        return self.address
