@@ -10,4 +10,5 @@ from django.db import models
 class RentingItem(models.Model):
     price = models.IntegerField()
     address = models.CharField(max_length=256)
+    pub_date = models.DateTimeField('date published')
     #property_type = models.CharField(max_length=16, choices=PROPERTY_TYPES)
