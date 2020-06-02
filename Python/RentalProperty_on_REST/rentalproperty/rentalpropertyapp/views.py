@@ -13,4 +13,4 @@ class RentingItemViewSet(viewsets.ModelViewSet):
     serializer_class = RentingItemSerializer
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html')
