@@ -8,7 +8,7 @@
     {% if renting_items_list %}
         <ul>
         {% for ri in renting_items_list %}
-            <li><a href="/rentalpropertyapp/{{ ri.id }}/">{{ ri.price }}</a></li>
+            <li><a href="{% url 'rentalproperty-detail' ri.id %}">{{ ri.price }}</a></li>
         {% endfor %}
         </ul>
     {% else %}
