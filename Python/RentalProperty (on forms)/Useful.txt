@@ -1,0 +1,12 @@
+migrate - смотрит в INSTALLED_APPS и создает нужные таблицы в БД в settings.py
+makemigrations - были изменения в модели, необходимо сообщить джанго подтянуть их (миграция это 0001_initial.py)
+python manage.py sqlmigrate rentalpropertyapp 0001 - посмотреть SQL код, который генерируется
+python manage.py shell - запуск python с подтягиванием модели проекта и т.д.
+
+Операции в БД:
+from rentalpropertyapp.models import RentingItem
+RentingItem.objects.all()
+ri = RentingItem(price=5000,address='Saint-Petersburg')
+ri.save()
+ri.id
+ri.price
