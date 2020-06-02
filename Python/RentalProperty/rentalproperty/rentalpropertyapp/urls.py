@@ -3,8 +3,10 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='rentalproperty-home'),
+    # ex: /rentalpropertyapp/5/
+    path('<int:rentingitem_id>/', views.detail, name='rentalproperty-detail'),
 
-
+    # Examples:
     # ex: /rentalpropertyapp/5/
     #path('<int:rentingitem_id>/', views.detail, name='detail'),
     # ex: /rentalpropertyapp/5/results/

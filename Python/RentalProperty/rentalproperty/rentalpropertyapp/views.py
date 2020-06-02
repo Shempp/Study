@@ -1,18 +1,18 @@
-from django.shortcuts import render
-
-# Create your views here.
-
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import RentingItem
 from django.template import loader
 
+# Create your views here.
+
 def home(request):
     renting_items_list = RentingItem.objects.all()
-    template = loader.get_template('rentalpropertyapp/index.html')
-    context = {
-        'renting_items_list': renting_items_list,
-    }
-    return HttpResponse(template.render(context, request))
+    context = {'renting_items_list': renting_items_list}
+    return render(request, 'rentalpropertyapp/home.html', context)
+
+    #renting_items_list = RentingItem.objects.all()
+    #template = loader.get_template('rentalpropertyapp/home.html')
+    #context = {'renting_items_list': renting_items_list}
+    #return HttpResponse(template.render(context, request))
 
     #renting_items_list = RentingItem.objects.all()
     #ri_list_prices = ([str(ri.price) for ri in renting_items_list])
@@ -21,6 +21,18 @@ def home(request):
     #prices_str = ', '.join(ri_list_prices)
     #output = addresses_str + ' ' + prices_str
     #return HttpResponse(output)
+
+
+def detail(request, rentingitem_id):
+    renting_item = get_object_or_404(RentingItem, pk=rentingitem_id)
+    return render(request, 'rentalpropertyapp/detail.html', {'renting_item': renting_item})
+
+    #try:
+    #    renting_item = RentingItem.objects.get(pk=rentingitem_id)
+    #except RentingItem.DoesNotExist:
+    #    raise Http404("RentingItem does not exist")
+    #return render(request, 'rentalpropertyapp/detail.html', {'renting_item': renting_item})
+
 
 # Examples:
 
