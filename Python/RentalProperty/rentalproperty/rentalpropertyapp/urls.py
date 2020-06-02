@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
 
+app_name = 'rentalpropertyapp'
 urlpatterns = [
+    # ex: /rentalpropertyapp/
     path('', views.home, name='rentalproperty-home'),
     # ex: /rentalpropertyapp/5/
     path('<int:rentingitem_id>/', views.detail, name='rentalproperty-detail'),
