@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Renting Item detail</title>
+    {% if title %}
+        <title>Renting Item {{ title }} detail</title>
+    {% else %}
+        <title>Renting Item detail</title>
+    {% endif %}
 </head>
 <body>
     <h1>{{ renting_item.address }}</h1>
-    <h1>{{ renting_item.price }}</h1>
-    <h1>{{ renting_item.pub_date }}</h1>
+    <p>{{ renting_item.price }}</p>
+    <p>{{ renting_item.pub_date }}</p>
     </ul>
 </body>
 </html>
