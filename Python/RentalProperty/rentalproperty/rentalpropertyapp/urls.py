@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views
 
+# TODO: Base.html with inheritance
+# TODO: Model 'Users' (can inherit from django users model)
+
 app_name = 'rentalpropertyapp'
 urlpatterns = [
     # ex: /rentalpropertyapp/

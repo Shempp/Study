@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import RentingItem
-from django.utils import timezone
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.utils import timezone
+from .forms import RentalPropertyAddForm
+from .models import RentingItem
 
 # Create your views here.
 
@@ -38,11 +39,17 @@ def detail(request, rentingitem_id):
 
 def add(request):
     if request.method == 'POST':
-        # TODO CreateForm here
-        price = request.POST.get('priceinput', None)
-        address = request.POST.get('addressinput', None)
-        ri = RentingItem(price=price, address=address, pub_date=timezone.now())
-        ri.save()
+        add_form = RentalPropertyAddForm(request.POST)
+        if add_form.is_valid():
+            price = add_form.cleaned_data['price']
+            address = add_form.cleaned_data['address']
+            ri = RentingItem(price=price, address=address, pub_date=timezone.now())
+            ri.save()
+
+        #price = request.POST.get('priceinput', None)
+        #address = request.POST.get('addressinput', None)
+        #ri = RentingItem(price=price, address=address, pub_date=timezone.now())
+        #ri.save()
 
     return HttpResponseRedirect(reverse('rentalpropertyapp:rentalproperty-home'))
 
