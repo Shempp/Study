@@ -5,14 +5,41 @@
     <title>Renting property</title>
 </head>
 <body>
+    <h1>Текущий список квартир:</h1>
     {% if renting_items_list %}
         <ul>
         {% for ri in renting_items_list %}
-            <li><a href="{% url 'rentalpropertyapp:rentalproperty-detail' ri.id %}">{{ ri.price }}</a></li>
+            <li><a href="{% url 'rentalpropertyapp:rentalproperty-detail' ri.id %}">{{ ri.address }}</a></li>
         {% endfor %}
         </ul>
     {% else %}
         <p>No renting items are available.</p>
     {% endif %}
+
+    <form action="{% url 'rentalpropertyapp:rentalproperty-add' %}" method="post">
+        {% csrf_token %}
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="addressinput">Введите адрес квартиры:</label>
+            <div class="col-md-4">
+                <input id="addressinput" name="addressinput" type="text" placeholder="city Saint-Petersburg, st. Lenina, 1" value="{{ address }}" maxlength="256" required class="form-control input-md">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="priceinput">Введите цену аренды:</label>
+            <div class="col-md-4">
+                <input id="priceinput" name="priceinput" type="text" placeholder="15000" value="{{ price }}" maxlength="32" required class="form-control input-md">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <div class="col-md-4">
+                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Добавить</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>

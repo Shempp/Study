@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import RentingItem
-from django.template import loader
+from django.utils import timezone
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -33,6 +35,21 @@ def detail(request, rentingitem_id):
     #    raise Http404("RentingItem does not exist")
     #return render(request, 'rentalpropertyapp/detail.html', {'renting_item': renting_item})
 
+
+def add(request):
+    if request.method == 'POST':
+        # TODO CreateForm here
+        price = request.POST.get('priceinput', None)
+        address = request.POST.get('addressinput', None)
+        ri = RentingItem(price=price, address=address, pub_date=timezone.now())
+        ri.save()
+
+    return HttpResponseRedirect(reverse('rentalpropertyapp:rentalproperty-home'))
+
+def delete(request, rentingitem_id):
+    renting_item = get_object_or_404(RentingItem, pk=rentingitem_id)
+    renting_item.delete()
+    return HttpResponseRedirect(reverse('rentalpropertyapp:rentalproperty-home'))
 
 # Examples:
 

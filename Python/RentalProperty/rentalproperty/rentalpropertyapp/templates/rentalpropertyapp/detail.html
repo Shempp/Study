@@ -9,9 +9,18 @@
     {% endif %}
 </head>
 <body>
-    <h1>{{ renting_item.address }}</h1>
-    <p>{{ renting_item.price }}</p>
-    <p>{{ renting_item.pub_date }}</p>
+    <h1>Адрес: {{ renting_item.address }}</h1>
+    <p>Цена: {{ renting_item.price }}</p>
+    <p>Дата добавления: {{ renting_item.pub_date }}</p>
     </ul>
+    <form action="{% url 'rentalpropertyapp:rentalproperty-delete' renting_item.id %}" method="post">
+        {% csrf_token %}
+         <!-- Button -->
+        <div class="form-group">
+            <div class="col-md-4">
+                <button id="deletebutton" name="deletebutton" class="btn btn-primary">Удалить</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
