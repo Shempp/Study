@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Renting property</title>
+</head>
+<body>
+    {% if renting_items_list %}
+        <ul>
+        {% for ri in renting_items_list %}
+            <li><a href="/rentalpropertyapp/{{ ri.id }}/">{{ ri.price }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No renting items are available.</p>
+    {% endif %}
+</body>
+</html>
