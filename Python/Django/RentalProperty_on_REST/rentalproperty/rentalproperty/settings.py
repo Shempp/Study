@@ -102,6 +102,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#CSRF_COOKIE_NAME='XSRF-TOKEN'
+#CSRF_COOKIE_HTTPONLY = False
+
 try:
     from local_settings import *
 except ImportError:
