@@ -21,7 +21,12 @@ angular.
                     name: 'Saint-Petersburg, st. Begovaya, 12',
                     price: '15000',
                     pub_date: currentDate,
+                } , {
+                    name: 'Anapa, st. Pushkina, 1',
+                    price: '9000',
+                    pub_date: currentDate,
                 }
             ];
+            this.orderProp = 'price';
         }
     });
