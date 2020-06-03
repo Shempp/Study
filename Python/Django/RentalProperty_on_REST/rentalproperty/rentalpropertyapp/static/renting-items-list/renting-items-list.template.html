@@ -1,21 +1,28 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-5">
             <!--Sidebar content-->
+            <h2>Поиск квартиры:</h2>
             <p>
-                Search: <input ng-model="$ctrl.query" />
+                Поиск: <input ng-model="$ctrl.query"/>
             </p>
-
             <p>
-                Sort by:
+                Сортировать по:
                 <select ng-model="$ctrl.orderProp">
-                    <option value="price">Price</option>
-                    <option value="address">Alphabetical</option>
-                    <option value="-pub_date">Newest</option>
+                    <option value="price">Цена</option>
+                    <option value="address">По алфавиту</option>
+                    <option value="-pub_date">Дата публикации</option>
                 </select>
             </p>
+            <h2>Добавление новой квартиры:</h2>
+            <p>
+                Введите адрес квартиры: <input ng-model="$ctrl.addressToAdd"/>
+            </p>
+            <p>
+                <button id="addbutton" name="addbutton" class="btn btn-primary">Добавить</button>
+            </p>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-5">
             <!--Body content-->
             <ul class="rentingItems">
                 <li ng-repeat="rentingItem in $ctrl.rentingItems | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
@@ -24,7 +31,6 @@
                     <p>{{rentingItem.pub_date | date:'dd/MM/yyyy HH:mm:ss'}}</p>
                 </li>
             </ul>
-
         </div>
     </div>
 </div>

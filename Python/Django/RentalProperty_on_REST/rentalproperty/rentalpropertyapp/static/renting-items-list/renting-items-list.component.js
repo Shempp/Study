@@ -9,10 +9,20 @@ angular.
         controller: ['$http', function RentingItemsListController($http) {
                 var self = this;
                 self.orderProp = 'price';
+                self.addressToAdd = '';
+
+                // REST HTTP GET
+                $http.get('http://127.0.0.1:8000/api/rentingitems/').then(function(response) {
+                    self.rentingItems = response.data;
+                });
+
+                /*
                 // Make http request to server to fetch the data in json file
+                // For tests
                 $http.get('/static/RentingItems.json').then(function(response) {
                     self.rentingItems = response.data;
                 });
+                 */
 
                 /*
                 var currentDate = new Date();

@@ -4,6 +4,7 @@
 // TODO: add bound forms support for AngularJS ('djng.forms')?
 var rentalpropertyApp = angular.module('rentalpropertyApp', [
   'rentingItemsList'
+    //'rentingItemDetail'
   //'djng.forms'
 ]);
 
