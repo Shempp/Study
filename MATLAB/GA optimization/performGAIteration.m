@@ -1,30 +1,30 @@
 function GADat=performGAIteration(GADat)
-%% Полная итерация ГА
+%% РџРѕР»РЅР°СЏ РёС‚РµСЂР°С†РёСЏ Р“Рђ
 Population=GADat.Population;
 SizeOfPopulation=size(Population,1);
 
-% Вычисления значений заданной функции
+% Р’С‹С‡РёСЃР»РµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№ Р·Р°РґР°РЅРЅРѕР№ С„СѓРЅРєС†РёРё
 FuncValues=inf(SizeOfPopulation,1);
 for i=1:SizeOfPopulation
     FuncValues(i)=easomFunction(Population(i,:));
 end
 GADat.FuncValues=FuncValues;
 
-% Поиск лучшей хромосомы популяции
+% РџРѕРёСЃРє Р»СѓС‡С€РµР№ С…СЂРѕРјРѕСЃРѕРјС‹ РїРѕРїСѓР»СЏС†РёРё
 [Value,Index]=min(GADat.FuncValues);
 if Value<=GADat.Fxmin
     GADat.Xmin=Population(Index,:);
     GADat.Fxmin=Value;
 end
 
-% Вывод результатов текущей итерации
+% Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ С‚РµРєСѓС‰РµР№ РёС‚РµСЂР°С†РёРё
 printIteration(GADat);
-% Репродукция
+% Р РµРїСЂРѕРґСѓРєС†РёСЏ
 Population=reproduction(GADat.FuncValues, Population);
-% Кроссинговер (арифметический кроссовер)
+% РљСЂРѕСЃСЃРёРЅРіРѕРІРµСЂ (Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёР№ РєСЂРѕСЃСЃРѕРІРµСЂ)
 Population=crossover(Population,GADat.Pc,GADat.Alpha);
-% Случайная мутация
+% РЎР»СѓС‡Р°Р№РЅР°СЏ РјСѓС‚Р°С†РёСЏ
 Population=mutation(Population,GADat.SpaceIntervals,GADat.Pm);
-% Вставим лучшую особь в популяцию (сратегия элитизма)
+% Р’СЃС‚Р°РІРёРј Р»СѓС‡С€СѓСЋ РѕСЃРѕР±СЊ РІ РїРѕРїСѓР»СЏС†РёСЋ (СЃСЂР°С‚РµРіРёСЏ СЌР»РёС‚РёР·РјР°)
 Population(round(GADat.SizeOfPopulation/2),:)=GADat.Xmin;
 GADat.Population=Population;

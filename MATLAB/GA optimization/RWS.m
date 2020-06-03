@@ -1,5 +1,5 @@
 function Index=RWS(SelProbs)
-%% Колесо рулетки (Roulette Wheel Selection) 
+%% РљРѕР»РµСЃРѕ СЂСѓР»РµС‚РєРё (Roulette Wheel Selection) 
 lenOfProbs=length(SelProbs);
 if lenOfProbs==1
     Index=1;

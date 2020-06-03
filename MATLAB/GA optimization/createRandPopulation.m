@@ -1,13 +1,13 @@
 function ResultPopulation=createRandPopulation(SizeOfPopulation,SpaceIntervals)
-%% Генерация популяции
-% Количество столбцов
+%% Р“РµРЅРµСЂР°С†РёСЏ РїРѕРїСѓР»СЏС†РёРё
+% РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ
 NumOfColumns = size(SpaceIntervals,2);
-% Создание матрицы вида [sizeOfPopulation X numOfColumn], значения в интервале (0,1)
+% РЎРѕР·РґР°РЅРёРµ РјР°С‚СЂРёС†С‹ РІРёРґР° [sizeOfPopulation X numOfColumn], Р·РЅР°С‡РµРЅРёСЏ РІ РёРЅС‚РµСЂРІР°Р»Рµ (0,1)
 RandomMatrix = rand(SizeOfPopulation,NumOfColumns);
-% Вектор значений размерности каждого из измерений (x1, x2)
+% Р’РµРєС‚РѕСЂ Р·РЅР°С‡РµРЅРёР№ СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё РєР°Р¶РґРѕРіРѕ РёР· РёР·РјРµСЂРµРЅРёР№ (x1, x2)
 SizeOfDimension=[-1 1]*SpaceIntervals;
 DimensionValues=ones(SizeOfPopulation,1)*SizeOfDimension;
 LowerBoundValues=ones(SizeOfPopulation,1)*SpaceIntervals(1,:);
-% (.*) - умножение соответствующих элементов
-% Получение случайной популяции в необходимом интервале
+% (.*) - СѓРјРЅРѕР¶РµРЅРёРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёС… СЌР»РµРјРµРЅС‚РѕРІ
+% РџРѕР»СѓС‡РµРЅРёРµ СЃР»СѓС‡Р°Р№РЅРѕР№ РїРѕРїСѓР»СЏС†РёРё РІ РЅРµРѕР±С…РѕРґРёРјРѕРј РёРЅС‚РµСЂРІР°Р»Рµ
 ResultPopulation=DimensionValues.*RandomMatrix+LowerBoundValues;

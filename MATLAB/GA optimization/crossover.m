@@ -1,5 +1,5 @@
 function NewPopulation=crossover(OldPopulation, Pc, Alpha)
-%% Арифметический кроссовер
+%% РђСЂРёС„РјРµС‚РёС‡РµСЃРєРёР№ РєСЂРѕСЃСЃРѕРІРµСЂ
 if nargin==1
     Pc = 0.5;
     Alpha = 0.5;
@@ -7,25 +7,25 @@ elseif nargin==2
     Alpha = 0.5;
 end
 
-% Размер популяции
+% Р Р°Р·РјРµСЂ РїРѕРїСѓР»В¤С†РёРё
 SizeOfPop = size(OldPopulation,1); 
-% Количество пар для кроссовера
+% РљРѕР»РёС‡РµСЃС‚РІРѕ РїР°СЂ РґР»СЏ РєСЂРѕСЃСЃРѕРІРµСЂР°
 NumOfPares = floor(SizeOfPop/2);   
-% Пары хромосом, выбранные случайно для скрещивания
+% РџР°СЂС‹ С…СЂРѕРјРѕСЃРѕРј, РІС‹Р±СЂР°РЅРЅС‹Рµ СЃР»СѓС‡Р°Р№РЅРѕ РґР»СЏ СЃРєСЂРµС‰РёРІР°РЅРёСЏ
 SelPairsCros = rand(NumOfPares,1)<= Pc;  
 NewPopulation=OldPopulation;
 
 for i=1:NumOfPares
     Index=(i-1)*2+1;
     if ~(SelPairsCros(i)==0)
-       % Первая хромосома из пары
+       % РџРµСЂРІР°СЏ С…СЂРѕРјРѕСЃРѕРјР° РёР· РїР°СЂС‹
        FirstChrom=OldPopulation(Index,:);
-       % Вторая хромосома из пары
+       % Р’С‚РѕСЂР°СЏ С…СЂРѕРјРѕСЃРѕРјР° РёР· РїР°СЂС‹
        SecondChrom=OldPopulation(Index+1,:);
-       % Формула арифмитического кроссовера и полученные потомки
+       % Р¤РѕСЂРјСѓР»Р° Р°СЂРёС„РјРёС‚РёС‡РµСЃРєРѕРіРѕ РєСЂРѕСЃСЃРѕРІРµСЂР° Рё РїРѕР»СѓС‡РµРЅРЅС‹Рµ РїРѕС‚РѕРјРєРё
        FirstChild=Alpha*FirstChrom+(1-Alpha)*SecondChrom;
        SecondChild=Alpha*SecondChrom+(1-Alpha)*FirstChrom;
-       % Меняем исходную популяцию
+       % РњРµРЅСЏРµРј РёСЃС…РѕРґРЅСѓСЋ РїРѕРїСѓР»СЏС†РёСЋ
        NewPopulation(Index,:)=FirstChild;
        NewPopulation(Index+1,:)=SecondChild;
     end

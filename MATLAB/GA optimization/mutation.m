@@ -1,19 +1,19 @@
 function NewPopulation=mutation(OldPopulation,SpaceIntervals,Pm)
-%% Случайная мутация (однородная)
+%% РЎР»СѓС‡Р°Р№РЅР°СЏ РјСѓС‚Р°С†РёСЏ (РѕРґРЅРѕСЂРѕРґРЅР°СЏ)
 SizeOfPopulation=size(OldPopulation,1);
-% Хромосомы, выбранные для мутации
+% РҐСЂРѕРјРѕСЃРѕРјС‹, РІС‹Р±СЂР°РЅРЅС‹Рµ РґР»СЏ РјСѓС‚Р°С†РёРё
 SelChromMut = rand(SizeOfPopulation,1)<=Pm;
 NewPopulation=OldPopulation;
 
 for i=1:SizeOfPopulation
     if ~(SelChromMut(i)==0)
-        % Выбор случайного гена хромосомы
+        % Р’С‹Р±РѕСЂ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ РіРµРЅР° С…СЂРѕРјРѕСЃРѕРјС‹
         chooseGen=randi(length(SpaceIntervals));
-        % Получение случайного числа в интервале
+        % РџРѕР»СѓС‡РµРЅРёРµ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ С‡РёСЃР»Р° РІ РёРЅС‚РµСЂРІР°Р»Рµ
         LowerBound=SpaceIntervals(1,1);
         UpperBound=SpaceIntervals(2,1);
         randValue=(UpperBound-LowerBound)*rand(1)+LowerBound;
-        % Меняем исходную популяцию
+        % РњРµРЅСЏРµРј РёСЃС…РѕРґРЅСѓСЋ РїРѕРїСѓР»СЏС†РёСЋ
         NewPopulation(i,chooseGen)=randValue;
     end
 end

@@ -1,17 +1,17 @@
 function plotEasomFunc(Xmin, Fxmin, XminGen, FxminGen)
-% Размер шрифта
+% Р Р°Р·РјРµСЂ С€СЂРёС„С‚Р°
 PlotFontSize=10;
-% Нижние границы координат
+% РќРёР¶РЅРёРµ РіСЂР°РЅРёС†С‹ РєРѕРѕСЂРґРёРЅР°С‚
 XLowerBounds=1;
-% Верхние границы координат
+% Р’РµСЂС…РЅРёРµ РіСЂР°РЅРёС†С‹ РєРѕРѕСЂРґРёРЅР°С‚
 XUpperBounds=5;
-% Шаг
+% РЁР°Рі
 Step=0.1;
 XData1=XLowerBounds:Step:XUpperBounds;
 XData2=XLowerBounds:Step:XUpperBounds;
 [XXData1, XXData2] = meshgrid(XData1 ,XData2);
 YYData=easomFuncForPlot(XXData1, XXData2);
-% Прорисовка фигуры в отдельном окне
+% РџСЂРѕСЂРёСЃРѕРІРєР° С„РёРіСѓСЂС‹ РІ РѕС‚РґРµР»СЊРЅРѕРј РѕРєРЅРµ
 figure(2);
 meshc(XXData1, XXData2, YYData);
 colorbar
@@ -20,10 +20,10 @@ xlabel('x1','fontsize',PlotFontSize);
 ylabel('x2','fontsize',PlotFontSize);
 zlabel('f','fontsize',PlotFontSize);
 axis tight
-% Добавление точки экстремума
+% Р”РѕР±Р°РІР»РµРЅРёРµ С‚РѕС‡РєРё СЌРєСЃС‚СЂРµРјСѓРјР°
 hold on
 plot3(Xmin(1),Xmin(2),Fxmin,'r.','MarkerSize',20)
-% Добавление промежуточных точек популяции
+% Р”РѕР±Р°РІР»РµРЅРёРµ РїСЂРѕРјРµР¶СѓС‚РѕС‡РЅС‹С… С‚РѕС‡РµРє РїРѕРїСѓР»СЏС†РёРё
 for i=1:length(XminGen)
     plot3(XminGen(i,1),XminGen(i,2),FxminGen(i),'b.','MarkerSize',10)
 end
