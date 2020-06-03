@@ -9,7 +9,7 @@
             <p>
                 Sort by:
                 <select ng-model="$ctrl.orderProp">
-                  <option value="name">Alphabetical</option>
+                  <option value="address">Alphabetical</option>
                     <option value="price">Price</option>
                   <option value="pub_date">Newest</option>
                 </select>
@@ -19,7 +19,7 @@
             <!--Body content-->
             <ul class="rentingItems">
                 <li ng-repeat="rentingItem in $ctrl.rentingItems | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-                    <span>{{rentingItem.name}}</span>
+                    <span>{{rentingItem.address}}</span>
                     <p>{{rentingItem.price}}</p>
                     <p>{{rentingItem.pub_date | date:'dd/MM/yyyy HH:mm:ss'}}</p>
                 </li>

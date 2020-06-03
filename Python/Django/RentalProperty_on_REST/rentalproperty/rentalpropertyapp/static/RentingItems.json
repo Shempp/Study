@@ -1,0 +1,32 @@
+[
+  {
+    "price": 10000,
+    "address": "Smolensk, st. Pushkina, 15",
+	"pub_date": "03/06/2020 18:24:42"
+  },
+  {
+    "price": 20000,
+    "address": "Anapa, st. Lenina, 31",
+	"pub_date": "02/06/2019 18:24:42"
+  },
+  {
+    "price": 30000,
+    "address": "Saint-Petersburg, st. Begovaya, 27",
+	"pub_date": "03/05/2020 17:24:42"
+  },
+  {
+    "price": 40000,
+    "address": "Moscow, st. Tvardoskogo, 64",
+	"pub_date": "03/06/2020 17:24:00"
+  },
+  {
+    "price": 50000,
+    "address": "Moscow, st. Tvardoskogo, 183",
+	"pub_date": "03/06/2020 17:23:42"
+  },
+  {
+    "price": 17000,
+    "address": "Krasnodar, st. Rilenkova, 41",
+	"pub_date": "03/06/2020 17:24:42"
+  }
+]
