@@ -1,6 +1,6 @@
 describe('rentingItemsList', function() {
     // Load the module that contains the `rentingItemsList` component before each test
-    beforeEach(module('rentalpropertyApp'));
+    beforeEach(module('rentingItemsList'));
 
     // Test the controller
     describe('RentingItemsListController', function() {

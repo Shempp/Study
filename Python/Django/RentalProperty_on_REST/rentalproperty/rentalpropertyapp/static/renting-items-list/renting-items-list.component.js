@@ -4,14 +4,8 @@
 angular.
     module('rentingItemsList').
     component('rentingItemsList', {  // This name is what AngularJS uses to match to the `<renting-items-list>` element.
-        template:
-            '<ul>' +
-              '<li ng-repeat="rentingItem in $ctrl.rentingItems">' +
-                '<span>{{rentingItem.name}}</span>' +
-                '<p>{{rentingItem.price}}</p>' +
-                '<p>{{rentingItem.pub_date | date:\'dd/MM/yyyy HH:mm:ss\'}}</p>' +
-              '</li>' +
-            '</ul>',
+        // Note: The URL is relative to our `home.html` file
+        templateUrl: '/static/renting-items-list/renting-items-list.template.html',
         controller: function RentingItemsListController() {
             var currentDate = new Date();
             this.rentingItems = [
