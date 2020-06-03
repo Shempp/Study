@@ -1,8 +1,8 @@
 'use strict';
 
-// Register `rentingItemsList` component, along with its associated controller and template
+// Register `rentingItemsList` component on the 'rentingItemsList' module
 angular.
-    module('rentalpropertyApp').
+    module('rentingItemsList').
     component('rentingItemsList', {  // This name is what AngularJS uses to match to the `<renting-items-list>` element.
         template:
             '<ul>' +
