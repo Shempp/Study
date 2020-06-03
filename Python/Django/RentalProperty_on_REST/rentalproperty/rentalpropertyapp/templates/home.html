@@ -11,7 +11,11 @@
 
     {% load static %}
     <script src="{% static 'angular.js' %}"></script>
+    <script src="{% static 'angular-route.js' %}"></script>
     <script src="{% static 'app.module.js' %}"></script>
+    <script src="{% static 'app.config.js' %}"></script>
+    <script src="{% static 'renting-item-detail/renting-item-detail.module.js' %}"></script>
+    <script src="{% static 'renting-item-detail/renting-item-detail.component.js' %}"></script>
     <script src="{% static 'renting-items-list/renting-items-list.module.js' %}"></script>
     <script src="{% static 'renting-items-list/renting-items-list.component.js' %}"></script>
     <!-- TODO: add bound forms support for AngularJS? -->
@@ -29,9 +33,7 @@
     <!-- Django and AngularJS share the same token for variable substitution in templates, ie. -->
     <!-- Resolve by AngularJS (default - by Django) verbatim  -->
     {% verbatim %}
-    <!-- Use a custom component to render a list of rentingItems -->
-    <!-- This tells AngularJS to instantiate a `rentingItems` component here. -->
-    <renting-items-list></renting-items-list>
+    <div ng-view></div>
     {% endverbatim %}
 
 </body>

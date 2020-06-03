@@ -3,9 +3,10 @@
 // Define the `rentalpropertyApp` module
 // TODO: add bound forms support for AngularJS ('djng.forms')?
 var rentalpropertyApp = angular.module('rentalpropertyApp', [
-  'rentingItemsList'
-    //'rentingItemDetail'
-  //'djng.forms'
+    'rentingItemsList',
+    'ngRoute',
+    'rentingItemDetail'
+    //'djng.forms'
 ]);
 
 // As a convention in web applications, Ajax requests shall send the HTTP-Header (X-Requested-With: XMLHttpRequest)

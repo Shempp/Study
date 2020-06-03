@@ -15,18 +15,23 @@
                 </select>
             </p>
             <h2>Добавление новой квартиры:</h2>
-            <p>
-                Введите адрес квартиры: <input ng-model="$ctrl.addressToAdd"/>
-            </p>
-            <p>
-                <button id="addbutton" name="addbutton" class="btn btn-primary">Добавить</button>
-            </p>
+            <form ng-submit="$ctrl.addNewRentingItem()">
+                <p>
+                    Введите адрес квартиры: <input ng-model="$ctrl.newAddress"/>
+                </p>
+                <p>
+                    Введите цену: <input type="number" ng-model="$ctrl.newPrice"/>
+                </p>
+                <p>
+                    <button id="addbutton" name="addbutton" class="btn btn-primary">Добавить</button>
+                </p>
+            </form>
         </div>
         <div class="col-md-5">
             <!--Body content-->
             <ul class="rentingItems">
                 <li ng-repeat="rentingItem in $ctrl.rentingItems | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-                    <a href="{{rentingItem.id}}" class="thumb">{{rentingItem.address}}</a>
+                    <a href="#!{{rentingItem.id}}" class="thumb">{{rentingItem.address}}</a>
                     <p>{{rentingItem.price}}</p>
                     <p>{{rentingItem.pub_date | date:'dd/MM/yyyy HH:mm:ss'}}</p>
                 </li>

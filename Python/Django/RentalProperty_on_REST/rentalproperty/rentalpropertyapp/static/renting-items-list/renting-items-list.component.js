@@ -9,7 +9,22 @@ angular.
         controller: ['$http', function RentingItemsListController($http) {
                 var self = this;
                 self.orderProp = 'price';
-                self.addressToAdd = '';
+                self.newAddress = '';
+                self.newPrice = '';
+
+                // Register callback addNewRentingItem for adding new RentingItem
+                self.addNewRentingItem = function()
+                {
+                    $http.post('http://127.0.0.1:8000/api/rentingitems/', {
+                        'address':self.newAddress,
+                        'price':parseInt(self.newPrice)
+                    }).then(function(response) {
+                        self.rentingItems.push(response.data);
+                    });
+
+                    //self.newPrice = '';
+                    //self.addressToAdd = '';
+                };
 
                 // REST HTTP GET
                 $http.get('http://127.0.0.1:8000/api/rentingitems/').then(function(response) {
@@ -18,13 +33,14 @@ angular.
 
                 /*
                 // Make http request to server to fetch the data in json file
-                // For tests
+                // For tests (from file)
                 $http.get('/static/RentingItems.json').then(function(response) {
                     self.rentingItems = response.data;
                 });
                  */
 
                 /*
+                // For tests (dummy data)
                 var currentDate = new Date();
                 this.rentingItems = [
                     {
