@@ -9,19 +9,22 @@ rentalpropertyApp.config(function($httpProvider) {
     $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
-// TODO: add time in 'rentingItems' model
 // Define the `RentingItemsListController` controller on the `rentalpropertyApp` module
 rentalpropertyApp.controller('RentingItemsListController', function RentingItemsListController($scope) {
+    var currentDate = new Date();
     $scope.rentingItems = [
         {
             name: 'Saint-Petersburg, st. Begovaya, 10',
-            price: '25000'
+            price: '25000',
+            pub_date: currentDate,
         }, {
             name: 'Saint-Petersburg, st. Begovaya, 11',
-            price: '20000'
+            price: '20000',
+            pub_date: currentDate,
         }, {
             name: 'Saint-Petersburg, st. Begovaya, 12',
-            price: '15000'
+            price: '15000',
+            pub_date: currentDate,
         }
     ];
 });
