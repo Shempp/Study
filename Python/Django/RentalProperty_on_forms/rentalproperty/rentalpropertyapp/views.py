@@ -28,7 +28,7 @@ def home(request):
 
 def detail(request, rentingitem_id):
     renting_item = get_object_or_404(RentingItem, pk=rentingitem_id)
-    return render(request, 'rentalpropertyapp/detail.html', {'renting_item': renting_item, 'title':rentingitem_id})
+    return render(request, 'rentalpropertyapp/detail.html', {'renting_item': renting_item, 'title': rentingitem_id})
 
     #try:
     #    renting_item = RentingItem.objects.get(pk=rentingitem_id)
