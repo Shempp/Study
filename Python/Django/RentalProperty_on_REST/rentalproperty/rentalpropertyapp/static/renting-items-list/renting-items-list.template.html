@@ -4,7 +4,7 @@
             <!--Sidebar content-->
             <h2>Поиск квартиры:</h2>
             <p>
-                Поиск: <input ng-model="$ctrl.query"/>
+                Поиск: <input required class="form-control input-md" ng-model="$ctrl.query"/>
             </p>
             <p>
                 Сортировать по:
@@ -17,10 +17,10 @@
             <h2>Добавление новой квартиры:</h2>
             <form ng-submit="$ctrl.addNewRentingItem()">
                 <p>
-                    Введите адрес квартиры: <input type="text" ng-model="$ctrl.newAddress"/>
+                    Введите адрес квартиры: <input type="text" placeholder="city Saint-Petersburg, st. Lenina, 1" maxlength="256" required class="form-control input-md" ng-model="$ctrl.newAddress"/>
                 </p>
                 <p>
-                    Введите цену: <input type="number" ng-model="$ctrl.newPrice"/>
+                    Введите цену: <input type="number" placeholder="15000" maxlength="32" required class="form-control input-md" ng-model="$ctrl.newPrice"/>
                 </p>
                 <p>
                     <button id="addbutton" name="addbutton" class="btn btn-primary">Добавить</button>
