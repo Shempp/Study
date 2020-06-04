@@ -8,13 +8,19 @@ angular.
         templateUrl: '/static/renting-items-list/renting-items-list.template.html',
         controller: ['$http', function RentingItemsListController($http) {
                 var self = this;
-                self.orderProp = 'price';
-                self.newAddress = '';
+
+                // TODO: going back should not overwrite data
                 self.newPrice = '';
+                self.addressToAdd = '';
+                self.orderProp = 'price';
+
+                // REST HTTP GET
+                $http.get('http://127.0.0.1:8000/api/rentingitems/').then(function(response) {
+                    self.rentingItems = response.data;
+                });
 
                 // Register callback addNewRentingItem for adding new RentingItem
-                self.addNewRentingItem = function()
-                {
+                self.addNewRentingItem = function() {
                     $http.post('http://127.0.0.1:8000/api/rentingitems/', {
                         'address':self.newAddress,
                         'price':parseInt(self.newPrice)
@@ -22,14 +28,11 @@ angular.
                         self.rentingItems.push(response.data);
                     });
 
+                    // Refreshing model on home page after adding new item
                     //self.newPrice = '';
                     //self.addressToAdd = '';
+                    //self.orderProp = 'price';
                 };
-
-                // REST HTTP GET
-                $http.get('http://127.0.0.1:8000/api/rentingitems/').then(function(response) {
-                    self.rentingItems = response.data;
-                });
 
                 /*
                 // Make http request to server to fetch the data in json file

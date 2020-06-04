@@ -3,17 +3,25 @@
 angular.
     module('rentingItemDetail').
     component('rentingItemDetail', {
-        template: 'TBD: Detail view for <span>{{$ctrl.id}}</span>',
-        controller: ['$routeParams', function RentingItemDetailController($routeParams, $http, $location) {
+        templateUrl: '/static/renting-item-detail/renting-item-detail.template.html',
+        controller: ['$routeParams', '$http', '$location', function RentingItemDetailController($routeParams, $http, $location) {
+            var self = this;
+            var homeURL = 'http://127.0.0.1:8000/api/rentingitems/';
+            var currentURL = homeURL + $routeParams.rentingItemId;
+            // REST HTTP GET
+            $http.get(currentURL).then(function(response) {
+                //self.id = response.data.id;
+                self.address = response.data.address;
+                self.price = response.data.price;
+                self.pub_date = response.data.pub_date;
+            });
 
-
-             // REST HTTP GET
-            //$http.get('http://127.0.0.1:8000/api/rentingitems/').then(function(response) {
-                //self.rentingItems = response.data;
-            //});
-
-            this.id = $routeParams.rentingItemId;
-            console.log(this.id);
-        }
-        ]
+            // Register callback deleteRentingItem for deleting RentingItem
+            self.deleteRentingItem = function() {
+                $http.delete(currentURL).then(function(response) {
+                    // Redirect to home page
+                    $location.url(homeURL);
+                });
+            }
+        }]
     });

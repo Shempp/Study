@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <ul class="rentingItem">
+        <h1>Адрес: {{ $ctrl.address }}</h1>
+        <p>Цена: {{ $ctrl.price }}</p>
+        <p>Дата добавления: {{ $ctrl.pub_date }}</p>
+        <form ng-submit="$ctrl.deleteRentingItem()">
+            <p>
+                <button id="deletebutton" name="deletebutton" class="btn btn-danger">Удалить</button>
+            </p>
+        </form>
+    </ul>
+</div>
