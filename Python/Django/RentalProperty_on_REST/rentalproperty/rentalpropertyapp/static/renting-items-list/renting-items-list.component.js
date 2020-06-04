@@ -25,7 +25,7 @@ angular.
                     $http.post(itemsURL, {
                         'address': self.newAddress,
                         'price': parseInt(self.newPrice)
-                    }).then(function(response) {
+                    }, {withCredentials: true}).then(function(response) {
                         self.rentingItems.push(response.data);
                     });
 

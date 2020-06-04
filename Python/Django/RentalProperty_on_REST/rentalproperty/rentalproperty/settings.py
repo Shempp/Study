@@ -23,14 +23,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Application definition
 
 INSTALLED_APPS = [
+    # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rentalpropertyapp.apps.RentalpropertyappConfig',
+
+    # Third-Party Apps
     'rest_framework',
+
+    # Local Apps
+    'rentalpropertyapp.apps.RentalpropertyappConfig',
 ]
 
 MIDDLEWARE = [
@@ -102,8 +107,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#CSRF_COOKIE_NAME='XSRF-TOKEN'
-#CSRF_COOKIE_HTTPONLY = False
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+CSRF_COOKIE_NAME='XSRF-TOKEN'
+CSRF_COOKIE_HTTPONLY = False
+CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 
 try:
     from local_settings import *

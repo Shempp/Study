@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ login_form }}
+        <!-- Button -->
+        <div class="form-group">
+            <div class="col-md-4">
+                <button id="login-button" name="loginButton" class="btn btn-primary">Войти</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
