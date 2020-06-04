@@ -25,26 +25,11 @@
 
     <form action="{% url 'rentalpropertyapp:rentalproperty-add' %}" method="post">
         {% csrf_token %}
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="addressinput">Введите адрес квартиры:</label>
-            <div class="col-md-4">
-                <input id="addressinput" name="address" type="text" placeholder="city Saint-Petersburg, st. Lenina, 1" value="{{ address }}" maxlength="256" required class="form-control input-md">
-            </div>
-        </div>
-
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="priceinput">Введите цену аренды:</label>
-            <div class="col-md-4">
-                <input id="priceinput" name="price" type="number" placeholder="15000" value="{{ price }}" maxlength="32" required class="form-control input-md">
-            </div>
-        </div>
-
+        {{ input_form }}
         <!-- Button -->
         <div class="form-group">
             <div class="col-md-4">
-                <button id="addbutton" name="addbutton" class="btn btn-primary">Добавить</button>
+                <button id="add-button" name="add-button" class="btn btn-primary">Добавить</button>
             </div>
         </div>
     </form>

@@ -9,7 +9,11 @@ from .models import RentingItem
 
 def home(request):
     renting_items_list = RentingItem.objects.all()
-    context = {'renting_items_list': renting_items_list}
+    add_input_form = RentalPropertyAddForm()
+    context = {
+        'renting_items_list': renting_items_list,
+        'input_form': add_input_form
+    }
     return render(request, 'rentalpropertyapp/home.html', context)
 
     #renting_items_list = RentingItem.objects.all()
