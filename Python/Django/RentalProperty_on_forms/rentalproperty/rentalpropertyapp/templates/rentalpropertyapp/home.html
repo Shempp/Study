@@ -23,9 +23,11 @@
         <p>No renting items are available.</p>
     {% endif %}
 
+    {% load crispy_forms_tags %}
+
     <form action="{% url 'rentalpropertyapp:rentalproperty-add' %}" method="post">
         {% csrf_token %}
-        {{ input_form }}
+        {{ input_form|crispy }}
         <!-- Button -->
         <div class="form-group">
             <div class="col-md-4">

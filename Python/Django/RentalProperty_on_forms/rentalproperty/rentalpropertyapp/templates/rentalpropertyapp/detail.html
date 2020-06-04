@@ -19,13 +19,12 @@
     <h1>Адрес: {{ renting_item.address }}</h1>
     <p>Цена: {{ renting_item.price }}</p>
     <p>Дата добавления: {{ renting_item.pub_date }}</p>
-    </ul>
     <form action="{% url 'rentalpropertyapp:rentalproperty-delete' renting_item.id %}" method="post">
         {% csrf_token %}
          <!-- Button -->
         <div class="form-group">
             <div class="col-md-4">
-                <button id="deletebutton" name="deletebutton" class="btn btn-danger">Удалить</button>
+                <button id="delete-button" name="delete-button" class="btn btn-danger">Удалить</button>
             </div>
         </div>
     </form>
