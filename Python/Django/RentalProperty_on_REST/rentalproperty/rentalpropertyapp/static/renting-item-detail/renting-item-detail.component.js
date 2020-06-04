@@ -7,9 +7,9 @@ angular.
         controller: ['$routeParams', '$http', '$location', function RentingItemDetailController($routeParams, $http, $location) {
             var self = this;
             var homeURL = 'http://127.0.0.1:8000/api/rentingitems/';
-            var currentURL = homeURL + $routeParams.rentingItemId;
+            var detailURL = homeURL + $routeParams.rentingItemId + '/';
             // REST HTTP GET
-            $http.get(currentURL).then(function(response) {
+            $http.get(detailURL).then(function(response) {
                 //self.id = response.data.id;
                 self.address = response.data.address;
                 self.price = response.data.price;
@@ -18,7 +18,7 @@ angular.
 
             // Register callback deleteRentingItem for deleting RentingItem
             self.deleteRentingItem = function() {
-                $http.delete(currentURL).then(function(response) {
+                $http.delete(detailURL).then(function(response) {
                     // Redirect to home page
                     $location.url(homeURL);
                 });
