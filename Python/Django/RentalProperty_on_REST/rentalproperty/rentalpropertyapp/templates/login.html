@@ -8,13 +8,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 </head>
 <body>
+    {% load crispy_forms_tags %}
     <form method="post">
         {% csrf_token %}
-        {{ login_form }}
+        <h1>Login</h1>
+        <div class="form-col">
+            <div class="form-group col-md-4 mb-0">
+                {{ login_form.login|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-4 mb-0">
+                {{ login_form.password|as_crispy_field }}
+            </div>
+        </div>
         <!-- Button -->
         <div class="form-group">
             <div class="col-md-4">
-                <button id="login-button" name="loginButton" class="btn btn-primary">Войти</button>
+                <button id="login-button" name="loginButton" class="btn btn-outline-info">Войти</button>
             </div>
         </div>
     </form>

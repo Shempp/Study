@@ -23,7 +23,7 @@
                     Введите цену: <input type="number" placeholder="15000" maxlength="32" required class="form-control input-md" ng-model="$ctrl.newPrice"/>
                 </p>
                 <p>
-                    <button id="addbutton" name="addbutton" class="btn btn-primary">Добавить</button>
+                    <button id="add-button" name="addbutton" class="btn btn-primary">Добавить</button>
                 </p>
             </form>
         </div>
@@ -37,5 +37,10 @@
                 </li>
             </ul>
         </div>
+        <form ng-submit="$ctrl.logout()">
+            <div class="col-md-8">
+                <button id="logout-button" name="logoutbutton" class="btn btn-outline-success">Logout</button>
+            </div>
+        </form>
     </div>
 </div>

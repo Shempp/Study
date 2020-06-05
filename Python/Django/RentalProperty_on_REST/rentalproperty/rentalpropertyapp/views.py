@@ -4,12 +4,12 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as login_user
 from django.shortcuts import render
+from django.contrib.auth import logout as logout_user
+from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets
 from .serializers import RentingItemSerializer
 from .models import RentingItem
 from .forms import LoginForm
-#from django.contrib.auth import logout
-#from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -44,3 +44,7 @@ def login(request):
     return render(request, 'login.html', {'login_form': login_form_default})
 
 
+@login_required
+def logout(request):
+    logout_user(request)
+    return HttpResponseRedirect(reverse('rentalpropertyapp:rentalproperty-login'))

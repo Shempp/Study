@@ -6,9 +6,10 @@ angular.
     component('rentingItemsList', {  // This name is what AngularJS uses to match to the `<renting-items-list>` element.
         // Note: The URL is relative to our `home.html` file
         templateUrl: '/static/renting-items-list/renting-items-list.template.html',
-        controller: ['$http', function RentingItemsListController($http) {
+        controller: ['$http', '$location', function RentingItemsListController($http, $location) {
                 var self = this;
                 var itemsURL = 'http://127.0.0.1:8000/api/rentingitems/';
+                var logoutURL = 'http://127.0.0.1:8000/rentalpropertyapp/logout';
 
                 // TODO: going back should not overwrite data
                 self.newPrice = '';
@@ -30,10 +31,19 @@ angular.
                     });
 
                     // Refreshing model on home page after adding new item
-                    //self.newPrice = '';
-                    //self.addressToAdd = '';
-                    //self.orderProp = 'price';
+                    self.newPrice = '';
+                    self.newAddress = '';
+                    self.orderProp = 'price';
                 };
+
+                // Register callback logout for logging out
+                self.logout = function() {
+                    $http.post(logoutURL, {}).then(function(response) {
+                        // Redirect to login page
+                        //$location.url(loginURL);
+                    });
+                };
+
 
                 /*
                 // Make http request to server to fetch the data in json file

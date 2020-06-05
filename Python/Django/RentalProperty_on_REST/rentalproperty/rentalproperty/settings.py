@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 
     # Third-Party Apps
     'rest_framework',
+    'crispy_forms',
 
     # Local Apps
     'rentalpropertyapp.apps.RentalpropertyappConfig',
@@ -116,6 +117,8 @@ REST_FRAMEWORK = {
 CSRF_COOKIE_NAME='XSRF-TOKEN'
 CSRF_COOKIE_HTTPONLY = False
 CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 try:
     from local_settings import *
