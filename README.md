@@ -2,7 +2,7 @@
 
 
 
-## Simple utilities
+## Utilities
 
 * [Optimization for Easom's function with Genetic Algorithm](https://github.com/Shempp/Study/tree/master/MATLAB/GA%20optimization)
 * [Genetic Algorithm for Traveling Salesman Problem with Ordinal Representation](https://github.com/Shempp/Study/tree/master/MATLAB/TSP%20GA)
