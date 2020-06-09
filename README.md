@@ -8,4 +8,4 @@
 * [Genetic Algorithm for Traveling Salesman Problem with Ordinal Representation](https://github.com/Shempp/Study/tree/master/MATLAB/TSP%20GA)
 * [Simple Genetic Algorithm on C++](https://github.com/Shempp/Study/tree/master/C%2B%2B/SimpleGA)
 * [Windows processes and modules](https://github.com/Shempp/Study/tree/master/C%2B%2B/WinProcessesAndModules)
-* [Signature of file](https://github.com/Shempp/Study/tree/master/C%2B%2B/Signature)
+* [Signature of the file](https://github.com/Shempp/Study/tree/master/C%2B%2B/Signature)
