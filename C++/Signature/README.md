@@ -1,4 +1,4 @@
-# Signature of file
+# Signature of the file
 Console program on C++ to generate the signature of the specified file. The signature is generated as follows: the original file is divided into blocks of equal (fixed) length (if the file size is not a multiple of the block size, the last fragment can be smaller or supplemented with zeros to the size of the full block). For each block, the hash value of the function is calculated and added to the output signature file.
 ## Before started
 To build the program you need a [boost](https://www.boost.org/) library.
