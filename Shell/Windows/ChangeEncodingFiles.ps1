@@ -28,7 +28,7 @@ Get-ChildItem -Path $rootDir -Include $extensions -Recurse | Where {$_.Fullname 
 			[IO.File]::WriteAllText($fileName, $rawStr)
 		}
 		else {
-			[Io.File]::ReadAllText($fileName) | Out-File -FilePath $fileName -Encoding $encoding
+			[Io.File]::ReadAllText($fileName) | Out-File -FilePath $fileName -Encoding $encoding -NoNewline
 		
 			#$content = $_ | Get-Content
 			#Set-Content -PassThru $fileName $content -Encoding $encoding -Force
