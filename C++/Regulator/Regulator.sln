@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Regulator", "Regulator.vcxproj", "{817DB2CA-C904-4429-86C8-57F615A81157}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Debug|x64.ActiveCfg = Debug|x64
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Debug|x64.Build.0 = Debug|x64
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Debug|x86.ActiveCfg = Debug|Win32
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Debug|x86.Build.0 = Debug|Win32
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Release|x64.ActiveCfg = Release|x64
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Release|x64.Build.0 = Release|x64
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Release|x86.ActiveCfg = Release|Win32
+		{817DB2CA-C904-4429-86C8-57F615A81157}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E650F612-CE4D-4CCC-897C-4BE3D6B5BC6B}
+	EndGlobalSection
+EndGlobal
