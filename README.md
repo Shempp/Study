@@ -10,7 +10,7 @@
 #### C++
 * [Simple Genetic Algorithm on C++](https://github.com/Shempp/Study/tree/master/C%2B%2B/SimpleGA)
 * [Windows processes and modules](https://github.com/Shempp/Study/tree/master/C%2B%2B/WinProcessesAndModules)
-* [Range container to quickly find ranges](https://github.com/Shempp/Study/tree/master/C%2B%2B/RangeArray)
+* [Range container to quickly find ranges (based on interval tree)](https://github.com/Shempp/Study/tree/master/C%2B%2B/RangeArray)
 #### PowerShell
 * [Script for changing encoding of files](https://github.com/Shempp/Study/blob/master/Shell/PowerShell/ChangeEncodingFiles.ps1)
 * [Script for remote replacing files of services/processes](https://github.com/Shempp/Study/blob/master/Shell/PowerShell/ReplaceRemoteFilesOfService.ps1)
