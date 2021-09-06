@@ -7,7 +7,7 @@ tic
 
 % Вычитка исходных данных
 % Евклидовы координаты berlin52
-EucCoords = dlmread('EuclideanСoordinates-berlin52.txt');
+EucCoords = dlmread('Euclidean�oordinates-berlin52.txt');
 X=EucCoords(:,1);
 Y=EucCoords(:,2);
 % Лучший тур berlin52
