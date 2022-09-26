@@ -1,3 +1,0 @@
-https://communities.vmware.com/t5/ESXi-Discussions/OSError-Errno-38-Function-not-implemented-for-python-command/m-p/2304057#2992486
-https://github.com/chriskohlhoff/asio/issues/579
-https://bugreports.qt.io/browse/QTBUG-88988
