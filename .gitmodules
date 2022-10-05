@@ -1,0 +1,3 @@
+[submodule "C++/params-parser/deps/gtest"]
+	path = C++/params-parser/deps/gtest
+	url = https://github.com/google/googletest.git
