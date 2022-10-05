@@ -10,7 +10,7 @@ using namespace std;
 map<string, string> ParseParams(const string& params)
 {
     map<string, string> result;
-    // Ñhecks if escape sequence is passed. If so, move the iterator to the required character, ignoring the escape character (backslash)
+    // Checks if escape sequence is passed. If so, move the iterator to the required character, ignoring the escape character (backslash)
     auto checkAndMoveIteratorToEscapeSeq = [](const auto& endIt, auto& it) {
         if (*it == '\\') {
             auto nextIt = std::next(it);
