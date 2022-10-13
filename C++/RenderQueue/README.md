@@ -1,4 +1,4 @@
-# Render Queue
+# Render Queue (SPSC lock-free queue)
 
 ## Task description
 

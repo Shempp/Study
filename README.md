@@ -10,6 +10,7 @@
 * [Windows processes and modules](https://github.com/Shempp/Study/tree/master/C%2B%2B/WinProcessesAndModules)
 * [Range container to quickly find ranges (based on interval tree)](https://github.com/Shempp/Study/tree/master/C%2B%2B/RangeArray)
 * [Params parser](https://github.com/Shempp/Study/tree/master/C%2B%2B/params-parser)
+* [SPSC lock-free queue](https://github.com/Shempp/Study/tree/master/C%2B%2B/RenderQueue)
 ### PowerShell
 * [Script for changing encoding of files](https://github.com/Shempp/Study/blob/master/Shell/PowerShell/ChangeEncodingFiles.ps1)
 * [Script for remote replacing files of services/processes](https://github.com/Shempp/Study/blob/master/Shell/PowerShell/ReplaceRemoteFilesOfService.ps1)
