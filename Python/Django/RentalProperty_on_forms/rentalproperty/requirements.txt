@@ -3,5 +3,5 @@ asgiref==3.2.7
 django-crispy-forms==1.9.1
 pip==21.1
 pytz==2020.1
-setuptools==47.1.1
+setuptools==65.5.1
 sqlparse==0.3.1
